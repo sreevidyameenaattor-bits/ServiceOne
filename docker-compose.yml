@@ -1,0 +1,26 @@
+version: '2'
+services:
+    service-one:
+        container_name: Service1
+        image: alpha:latest
+        ports:
+            - 18082:8082
+        networks:
+            - spring-cloud-network
+    service-two:
+        container_name: Service2
+        image: beta:latest
+        ports:
+            - 18083:8083
+        networks:
+            - spring-cloud-network
+    service-three:
+        container_name: Service3
+        image: gamma:latest
+        ports:
+            - 18084:8084
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge
